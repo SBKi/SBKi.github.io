@@ -1,0 +1,7 @@
+body {
+    margin: 2% 5%;
+}
+
+ul.nav.nav-underline {
+    flex-direction: row-reverse;
+}
