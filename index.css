@@ -95,3 +95,8 @@ footer {
     margin-top: 1em;
     justify-content: space-around;
 }
+
+.ac4_map_text {
+    margin-top: 15%;
+    text-align: center;
+}

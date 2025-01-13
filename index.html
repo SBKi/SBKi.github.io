@@ -16,7 +16,10 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
         ></script>
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+        <script
+            type="text/javascript"
+            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=11kwb0p2hf"
+        ></script>
         <script src="index.js"></script>
     </head>
     <body>
@@ -218,25 +221,36 @@
             </div>
         </article>
         <article>
-            <div class="container">
-                <section class="section" id="section-3">
-                    <h1>오시는 길</h1>
-                    <div
-                        id="map"
-                        style="width: 70%; height: 300px; margin: auto"
-                    ></div>
-                    <code id="snippet" class="snippet"></code>
-                </section>
+            <div class="ac4_map">
+                <div class="ac4_map_text">
+                    <p>오시는 길</p>
+                </div>
+                <div class="container">
+                    <section class="section" id="section-3">
+                        <div
+                            id="map"
+                            style="width: 70%; height: 300px; margin: auto"
+                        ></div>
+                        <code id="snippet" class="snippet"></code>
+                    </section>
+                </div>
+                <script id="code">
+                    var mapDiv = document.getElementById("map");
+                    var map = new naver.maps.Map("map", {
+                        center: new naver.maps.LatLng(35.181087, 129.203075),
+                        zoom: 17,
+                        minZoom: 8,
+                        zoomControl: true,
+                        zoomControlOptions: {
+                            position: naver.maps.Position.TOP_RIGHT,
+                        },
+                    });
+                    var marker = new naver.maps.Marker({
+                        position: new naver.maps.LatLng(35.181087, 129.203075),
+                        map: map,
+                    });
+                </script>
             </div>
-
-            <script
-                type="text/javascript"
-                src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=[11kwb0p2hf]"
-            ></script>
-            <script id="code">
-                var mapDiv = document.getElementById("map");
-                var map = new naver.maps.Map(mapDiv);
-            </script>
         </article>
         <article></article>
         <footer></footer>
