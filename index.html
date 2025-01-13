@@ -16,6 +16,7 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
         ></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
         <script src="index.js"></script>
     </head>
     <body>
@@ -146,21 +147,97 @@
                     <p>비히 마이크 · 비히 베티나<span>의 딸</span>파트리샤</p>
                 </div>
                 <div class="ac3_tel">
-                    <button>연락하기</button>
+                    <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        onclick="telToggle()"
+                    >
+                        연락하기
+                    </button>
                 </div>
-                <!-- <div>
-                    <span> 신랑에게 연락하기 </span>
-                    <img src="src/images/icon-tell.png" alt="" width="30px" />
-                    <img src="src/images/icon-msg.png" alt="" width="30px" />
+                <div id="telToggle" style="display: none">
+                    <div class="ac3_tel_wrap">
+                        <div>
+                            <span> 신랑 </span>
+                            <img
+                                src="src/images/icon-tell.png"
+                                alt=""
+                                width="30px"
+                                onclick="document.location.href='tel:010-2951-0206'"
+                            />
+                            <img
+                                src="src/images/icon-msg.png"
+                                alt=""
+                                width="30px"
+                                onclick="document.location.href='sms:010-2951-0206'"
+                            />
+                        </div>
+                        <div>
+                            <span> 신랑 아버지 </span>
+                            <img
+                                src="src/images/icon-tell.png"
+                                alt=""
+                                width="30px"
+                            />
+                            <img
+                                src="src/images/icon-msg.png"
+                                alt=""
+                                width="30px"
+                            />
+                        </div>
+                    </div>
+                    <div class="ac3_tel_wrap">
+                        <div>
+                            <span> 신부 </span>
+                            <img
+                                src="src/images/icon-tell.png"
+                                alt=""
+                                width="30px"
+                            />
+                            <img
+                                src="src/images/icon-msg.png"
+                                alt=""
+                                width="30px"
+                            />
+                        </div>
+                        <div>
+                            <span> 신랑 어머니</span>
+                            <img
+                                src="src/images/icon-tell.png"
+                                alt=""
+                                width="30px"
+                            />
+                            <img
+                                src="src/images/icon-msg.png"
+                                alt=""
+                                width="30px"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <span> 신부에게 연락하기 </span>
-                    <img src="src/images/icon-tell.png" alt="" width="30px" />
-                    <img src="src/images/icon-msg.png" alt="" width="30px" />
-                </div> -->
             </div>
         </article>
-        <article></article>
+        <article>
+            <div class="container">
+                <section class="section" id="section-3">
+                    <h1>오시는 길</h1>
+                    <div
+                        id="map"
+                        style="width: 70%; height: 300px; margin: auto"
+                    ></div>
+                    <code id="snippet" class="snippet"></code>
+                </section>
+            </div>
+
+            <script
+                type="text/javascript"
+                src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=[11kwb0p2hf]"
+            ></script>
+            <script id="code">
+                var mapDiv = document.getElementById("map");
+                var map = new naver.maps.Map(mapDiv);
+            </script>
+        </article>
         <article></article>
         <footer></footer>
     </body>
