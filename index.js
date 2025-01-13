@@ -21,12 +21,3 @@ function telToggle() {
         x.style.display = "none";
     }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    var calendarEl = document.getElementById("calendar");
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        timeZone: "local",
-        initialDate: "2025-06-07",
-    });
-    calendar.render();
-});
